@@ -14,3 +14,14 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>My website</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Hello world!</h1>
+    </body>
+</html>
