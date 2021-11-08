@@ -1,10 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
+<!-- validator.w3.org would throw error unless I specified character encoding. It was recommended
+by https://www.w3.org/International/questions/qa-html-encoding-declarations.en to always use UTF-8  -->
+<meta charset="utf-8"/>
     <title>AirWolf Flight Simulator</title>
 </head>
 <body>
     <h1>About our Flight Simulator</h1>
+    <!-- Display a picture of our flight simulator -->
     <img src="FlightSim.jpg" width="600" height="300" alt="Wolf Aviation Network Flight Simulator"> 
     <p>
         Our flight simulator, AirWolf, will be FAA approved as an Advanced Aviation
@@ -13,11 +17,14 @@
         so pilots can save alot of money utilizing this. The following table compares
         how many hours pilots can log in an AATD for different ratings:
     </p>
+    <!-- Creating a table showing how pilots can count flight sim hours towards various ratings -->
     <table>
+        <!-- Align "Rating" header to the left so it appears nicer -->
         <tr>
             <th style="text-align: left;">Rating</th>
             <th>Hours</th>
         </tr>
+        <!-- Align Hours values to the right to follow standard convention -->
         <tr>
             <td>Private Pilot</td>
             <td style="text-align: right;">2.5</td>
@@ -36,11 +43,13 @@
         </tr>
     </table>
     <br>
+    <!-- Set target="_blank" so page is opened in a new tab -->
     <span>
         Feel free to check out our website by <a target="_blank" href="https://wolfaviationnetwork.com">clicking here</a>.
         Here is a short video of our simulator as well.
     </span>
     <br>
+    <!-- Using HTML 5 video tag to insert a video of our flight sim onto the page -->
     <video width="600" height="400" controls>
         <source src="FlightSimVideo.mp4" type="video/mp4">
     </video>
