@@ -1,0 +1,166 @@
+/* Define any root variables in here */
+:root {
+    --primaryColor:red;
+    --secondaryColor:darkblue;
+    --shadowBorderColor: black;
+    --primaryFont: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* This media query will apply to any device */
+@media all {
+    body {
+      background-color: lightblue;
+    }
+    nav {
+        padding-left: 7px;
+        padding-top: 5px;
+        font-family: var(--primaryFont);
+    }
+    h1 {
+        color: var(--primaryColor);
+        text-shadow: -1px -1px var(--shadowBorderColor);
+        font-size: 3rem;
+        padding-left: 5px;
+    }
+    /* Not styling <li> tags as everything is done within the <ul> tags */
+    ul {
+        list-style: circle;
+        font-family: var(--primaryFont);
+        font-style: italic;
+    }
+    p {
+        font-family: var(--primaryFont);
+        padding: 5px;
+        /* I feel this improves readibility */
+        letter-spacing: .3px;
+        line-height: 22px;
+        text-indent: 20px;
+    }
+    table {
+        padding: 20px;
+        border: 3px var(--primaryColor) dashed;
+        /* Give our table rounded as opposed to jagged corners */
+        border-radius: 10px;
+        margin-left: 20px;
+    }
+    img {
+        border: 2px var(--shadowBorderColor) solid;
+        border-radius: 10px;
+        padding: 5px;
+        background-color: var(--primaryColor);
+        margin-bottom: 5px;
+    }
+    video {
+        padding: 5px;
+        border: 3px var(--shadowBorderColor) solid;
+        border-radius: 10px;
+        background-color: var(--secondaryColor);
+        margin-left: 10px;
+        margin-bottom: 5px;
+    }
+    iframe {
+        padding: 5px;
+        border: 3px var(--shadowBorderColor) solid;
+        border-radius: 10px;
+        background-color: var(--secondaryColor);
+        margin-bottom: 5px;
+    }
+    th {
+        font-family: var(--primaryFont);
+        border-bottom: 1px var(--shadowBorderColor) solid;
+    }
+    td {
+        font-family: var(--primaryFont);
+        font-style: oblique;
+    }
+
+}
+
+/* This media query will apply to screens with maximum width of 870px  */
+@media screen and (max-width: 870px) {
+    /* Decrease paragraph, list, and table header and and content font sizes on even smaller screens */
+    p {
+        font-size: small;
+    }
+    ul {
+        font-size: small;
+    }
+    th {
+        font-size: small;
+    }
+    td {
+        font-size: small;
+    }
+    /* This is to avoid header from wrapping on smaller screens */
+    h1 {
+        font-size: xx-large;
+    }
+    /* On small devices, decrease size of images and videos */
+    img {
+        width: 95%;
+        height: 95%;
+    }
+    video {
+        width: 95%;
+        height: 95%;
+    }
+    iframe {
+        width: 95%;
+    }
+
+}
+
+/* This media query will apply to screens with minimum width 870px and max 1080px */
+@media screen and (min-width: 870px) and (max-width: 1080px) {
+    /* Decrease paragraph, list, and table header and and content font sizes on smaller screens */
+    p {
+        font-size: medium;
+    }
+    ul {
+        font-size: medium;
+    }
+    th {
+        font-size: medium;
+    }
+    td {
+        font-size: medium;
+    }
+
+}
+
+/* This media query will apply to screens with minimum width 1080px */
+@media screen and (min-width: 1080px) {
+    /* This is sort of the default font sizes for any screen over 1080px wide */
+    p {
+        font-size: large;
+    }
+    ul {
+        font-size: large;
+    }
+    th {
+        font-size: large;
+    }
+    td {
+        font-size: large;
+    }
+
+}
+
+/* If screen size is larger than 870px, wrap text around images */
+@media screen and (min-width: 870px) {
+    img {
+        float: right;
+        margin-left: 10px;
+        margin-right: 50px;
+    }
+}
+
+/* Creating an extra media query for the youtube embedded video.
+This will prevent too much text wrapping on band.html */
+@media screen and (min-width: 1500px) {
+    iframe {
+        float: right;
+        margin-left: 10px;
+        margin-right: 50px;
+    }
+}
