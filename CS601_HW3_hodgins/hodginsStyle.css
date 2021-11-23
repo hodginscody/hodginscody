@@ -8,13 +8,30 @@
 
 /* This media query will apply to any device */
 @media all {
+    nav, ul, p, th, td {
+        font-family: var(--primaryFont);
+    }
+    .highlight nav {
+        background-color: lightslategray;
+        padding-top: 10px;
+        padding-right: 8px;
+        padding-bottom: 7px;
+        /* Need the following two lines to keep the nav menu background color
+        the same size as the width of the menu items */
+        display: inline;
+        float: inline-start;
+    }
+    .highlight a {
+        color: var(--secondaryColor);
+        background-color: yellowgreen;
+        font-family: cursive;
+    }
     body {
       background-color: lightblue;
     }
     nav {
         padding-left: 7px;
         padding-top: 5px;
-        font-family: var(--primaryFont);
     }
     h1 {
         color: var(--primaryColor);
@@ -25,11 +42,9 @@
     /* Not styling <li> tags as everything is done within the <ul> tags */
     ul {
         list-style: circle;
-        font-family: var(--primaryFont);
         font-style: italic;
     }
     p {
-        font-family: var(--primaryFont);
         padding: 5px;
         /* I feel this improves readibility */
         letter-spacing: .3px;
@@ -66,11 +81,9 @@
         margin-bottom: 5px;
     }
     th {
-        font-family: var(--primaryFont);
         border-bottom: 1px var(--shadowBorderColor) solid;
     }
     td {
-        font-family: var(--primaryFont);
         font-style: oblique;
     }
 
@@ -79,16 +92,7 @@
 /* This media query will apply to screens with maximum width of 870px  */
 @media screen and (max-width: 870px) {
     /* Decrease paragraph, list, and table header and and content font sizes on even smaller screens */
-    p {
-        font-size: small;
-    }
-    ul {
-        font-size: small;
-    }
-    th {
-        font-size: small;
-    }
-    td {
+    p, ul, th, td {
         font-size: small;
     }
     /* This is to avoid header from wrapping on smaller screens */
@@ -96,11 +100,7 @@
         font-size: xx-large;
     }
     /* On small devices, decrease size of images and videos */
-    img {
-        width: 95%;
-        height: 95%;
-    }
-    video {
+    img, video {
         width: 95%;
         height: 95%;
     }
@@ -113,16 +113,7 @@
 /* This media query will apply to screens with minimum width 870px and max 1080px */
 @media screen and (min-width: 870px) and (max-width: 1080px) {
     /* Decrease paragraph, list, and table header and and content font sizes on smaller screens */
-    p {
-        font-size: medium;
-    }
-    ul {
-        font-size: medium;
-    }
-    th {
-        font-size: medium;
-    }
-    td {
+    p, ul, th, td {
         font-size: medium;
     }
 
@@ -131,16 +122,7 @@
 /* This media query will apply to screens with minimum width 1080px */
 @media screen and (min-width: 1080px) {
     /* This is sort of the default font sizes for any screen over 1080px wide */
-    p {
-        font-size: large;
-    }
-    ul {
-        font-size: large;
-    }
-    th {
-        font-size: large;
-    }
-    td {
+    p, ul, th, td {
         font-size: large;
     }
 

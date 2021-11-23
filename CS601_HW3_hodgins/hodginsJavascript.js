@@ -6,11 +6,12 @@ var user_name;
 // prompt the user for their name and store in user_name variable
 do {
     user_name = prompt("Please enter your first name: ");
-    if (!(user_name.length > 0) || user_name == null) {
+    // Checking for null value first, as checking the length of null returns an error
+    if (user_name == null || !(user_name.length > 0)) {
         alert("You must enter at least one character for your name.");
     }
 }
-while (user_name.length > 0);
+while (user_name == null || !(user_name.length > 0));
 alert("Welcome " + user_name + "!");
 // Ask user to enter two numbers. If they enter something other than a number, keep reprompting them
 // Initialize variables we will use below.
@@ -32,23 +33,21 @@ function userInputAndResults() {
         // prompt() by default returns a string value
         number_one = prompt("Please enter a number of your choice: ");
         // If user did not enter a number, isNaN() is true and notify user
-        if (isNaN(number_one) || number_one.length < 1) {
+        if (isNaN(number_one) || number_one == null || number_one.length < 1) {
             alert("Your entry '" + number_one + "' is not a number.");
         }
     }
-    // If isNaN(number_one) is true, then the value is not a number
-    while (isNaN(number_one));
+    while (isNaN(number_one) || number_one == null || number_one.length < 1);
     
     // prompt user for second number until they enter a valid number
     do {
         number_two = prompt("Please enter another number of your choice: ");
         // If user did not enter a number, isNaN() is true and notify user
-        if (isNaN(number_two) || number_two.length < 1) {
+        if (isNaN(number_two) || number_two == null || number_two.length < 1) {
             alert("Your entry '" + number_two + "' is not a number.");
         }
     }
-    // If isNaN(number_two) is true, then the value is not a number
-    while (isNaN(number_two));
+    while (isNaN(number_two) || number_two == null || number_two.length < 1);
 
     // Use ParseFloat() so we can convert input value to numeric and do proper addition
     number_one = parseFloat(number_one);
