@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Link to external stylesheet hodginsStyle.css -->
+<link rel="stylesheet" href="./hodginsStyle.css" />
+<meta charset="utf-8"/>
+    <title>Informational Form</title>
+</head>
+<body>
+    <h1>Informational Form</h1>
+    <form name="InformationalForm" action="https://bucs601.com/submit.php" method="post">
+        <p>Enter your first name:
+            <input type="text" name="firstName" id="firstName" required>
+        </p>
+        <p>Enter your last name:
+            <input type="text" name="lastName" id="lastName" required>
+        </p>
+        <p>Enter your facilitator's first name:
+            <input type="text" name="facilitator" id="facilitator" required>
+        </p>
+        <p>How many years of experience do you have with web design? <br>
+            <div class="radioCheckboxes">
+                <input type="radio" name="programmingExperience" value="<1">Less than one <br>
+                <input type="radio" name="programmingExperience" value="<5">Less than five <br>
+                <input type="radio" name="programmingExperience" value="<10">Less than ten <br>
+                <input type="radio" name="programmingExperience" value=">=10">Ten or more <br>
+            </div>
+        </p>
+        <p>Which languages do you have experience with? Select all that apply. <br>
+            <div class="radioCheckboxes">
+                <input type="checkbox" name="html" value="html">HTML <br>
+                <input type="checkbox" name="javascript" value="javascript">Javascript <br>
+                <input type="checkbox" name="c#" value="c#">C# <br>
+                <input type="checkbox" name="python" value="python">Python <br>
+                <input type="checkbox" name="java" value="java">Java <br>
+            </div>
+        </p>
+        <p><input type="submit" name="submitButton" value="Submit"></p>
+    </form>
+    <!-- Link to external javascript hodginsJavascript.js -->
+    <script src="hodginsJavascript.js">
+    </script>
+</body>
+</html>

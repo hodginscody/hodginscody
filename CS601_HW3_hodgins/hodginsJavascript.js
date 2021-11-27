@@ -1,6 +1,7 @@
 // Notes: will not allow user to quit the program by clicking Cancel.
 // Will also not allow user to enter blank responses. They must
 // walk through the program at least one time.
+// This program will only run on the home.html page.
 
 alert("Welcome to my website!");
 var user_name;
