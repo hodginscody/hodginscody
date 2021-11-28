@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Informational Form</h1>
-    <form name="InformationalForm" action="https://bucs601.com/submit.php" method="post">
+    <form name="InformationalForm" onsubmit="return Submit();" method="post">
         <p>Enter your first name:
             <input type="text" name="firstName" id="firstName" required>
         </p>
@@ -35,7 +35,9 @@
                 <input type="checkbox" name="java" value="java">Java <br>
             </div>
         </p>
-        <p><input type="submit" name="submitButton" value="Submit"></p>
+        <div class="submit">
+            <p><input type="submit" name="submitButton" value="SUBMIT" id="submit"></p>
+        </div>
     </form>
     <!-- Link to external javascript hodginsJavascript.js -->
     <script src="hodginsJavascript.js">

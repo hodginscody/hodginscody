@@ -7,8 +7,8 @@
         {
             "type": "pwa-chrome",
             "request": "launch",
-            "name": "Open home.html",
-            "file": "c:\\Users\\chodgins\\Desktop\\BU Course Work\\METCS601\\hodginscody\\CS601_HW4_hodgins\\home.html"
+            "name": "Open informationalForm.html",
+            "file": "c:\\Users\\chodgins\\Desktop\\BU Course Work\\METCS601\\hodginscody\\CS601_HW4_hodgins\\informationalForm.html"
         }
     ]
 }
