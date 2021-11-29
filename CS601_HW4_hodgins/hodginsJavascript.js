@@ -55,9 +55,10 @@ function Submit() {
         }
     }
     // Next, validate that the facilitator the user entered is valid
+    // Will allow user to enter upper or lower case as long as name matches one of the facilitators
     for (var k = 0; k < validFacilitators.length; k++) {
         // If we find a matching facilitator, then break from this loop
-        if (facilitator == validFacilitators[k]) {
+        if (facilitator.toLowerCase() == validFacilitators[k].toLowerCase()) {
             break;
         }
     }
@@ -70,9 +71,9 @@ function Submit() {
         passedValidation = false;
         return passedValidation;
     }
-    // If validation passes, then return the web address of the database we are submitting to  
+    // If validation passes, then return true so we can be redirected to database web address 
     if (passedValidation !== false) {
-        passedValidation = "https://bucs601.com/submit.php";
+        passedValidation = true;
     }
     return passedValidation;
 }
