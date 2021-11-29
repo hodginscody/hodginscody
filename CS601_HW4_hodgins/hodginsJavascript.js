@@ -20,7 +20,13 @@ function Submit() {
     // Loop through nameArray to validate firstName and lastName
     for (var j = 0; j < nameArray.length; j++) {
         if (nameArray[j].length < 2) {
-            alert("First Name must be at least two characters in the alphabet.");
+            // j = 0 -> First Name
+            // j = 1 -> Last Name
+            if (j == 0) {
+                alert("First Name must be at least two characters in the alphabet.");
+            } else {
+                alert("Last Name must be at least two characters in the alphabet.");
+            }
             // Will not return here because I want to let the user know if they've
             // entered invalid characters as well.
             passedValidation = false;
@@ -32,7 +38,11 @@ function Submit() {
             // match() determines if the character is within A-Z
             // i makes the Regex case insensitive
             if (nameArray[j].charAt(i).match(/[A-Z]/i) == null) {
-                alert("First Name can only contain characters in the alphabet.");
+                if (j == 0) {
+                    alert("First Name can only contain characters in the alphabet.");
+                } else {
+                    alert("Last Name can only contain characters in the alphabet.");
+                }
                 passedValidation = false;
                 // Return to the form. No need to check the rest of the characters
                 return passedValidation;
