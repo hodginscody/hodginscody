@@ -1,12 +1,12 @@
-// window.onload = function() {
-//     let clickedSubmit = document.getElementById('submit');
-//     clickedSubmit.onclick = Submit;
-//  }
-
 // Create an array of active facilitators in this class that we 
 // will validate input against
 let validFacilitators = ["Josh", "Chris", "Fazil", "Christian"];
-   
+
+// Submit() is called upon a user submitting informationalForm
+// If the function returns false, that means the user entered invalid data
+// and they will not be redirected to the submission database.
+// Otherwise, data will be submitted and user will be redirected to the 
+// submission database.
 function Submit() {
     let firstName = document.getElementById("firstName").value;
     let lastName = document.getElementById("lastName").value;
@@ -24,8 +24,10 @@ function Submit() {
             // j = 1 -> Last Name
             if (j == 0) {
                 alert("First Name must be at least two characters in the alphabet.");
+                document.getElementById("firstName").value = "";
             } else {
                 alert("Last Name must be at least two characters in the alphabet.");
+                document.getElementById("lastName").value = "";
             }
             // Will not return here because I want to let the user know if they've
             // entered invalid characters as well.
@@ -40,8 +42,11 @@ function Submit() {
             if (nameArray[j].charAt(i).match(/[A-Z]/i) == null) {
                 if (j == 0) {
                     alert("First Name can only contain characters in the alphabet.");
+                    // If user entry is invalid, set the field to blank
+                    document.getElementById("firstName").value = "";
                 } else {
                     alert("Last Name can only contain characters in the alphabet.");
+                    document.getElementById("lastName").value = "";
                 }
                 passedValidation = false;
                 // Return to the form. No need to check the rest of the characters
@@ -61,6 +66,7 @@ function Submit() {
     // did not find any match.
     if (k == validFacilitators.length) {
         alert("You entered an invalid facilitator. Please enter one of the following: " + validFacilitators.join(","));
+        document.getElementById("facilitator").value = "";
         passedValidation = false;
         return passedValidation;
     }

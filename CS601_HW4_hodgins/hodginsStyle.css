@@ -11,21 +11,8 @@
     p, input {
         font-family: var(--primaryFont);
     }
-    /* Define hover effects for various tags */
-    a:hover {
-        background-color: magenta;
-    }
-    .highlight a:hover {
-        font-size: 120%;
-    }
-    a:active {
-        background-color: white;
-    }
-    img:hover, video:hover, iframe:hover {
-        background-color: white;
-    }
     body {
-      background-color: lightblue;
+        background-color: lightblue;
     }
     h1 {
         color: var(--primaryColor);
@@ -40,13 +27,6 @@
         line-height: 22px;
         text-indent: 20px;
     }
-    img {
-        border: 2px var(--shadowBorderColor) solid;
-        border-radius: 10px;
-        padding: 5px;
-        background-color: var(--primaryColor);
-        margin-bottom: 5px;
-    }
     .radioCheckboxes input {
         margin-left: 100px;
         /* I feel this improves readibility */
@@ -54,6 +34,35 @@
         text-indent: 20px;
         vertical-align: -1.5px;
     }
+    /* Style our submit button */
+    .submit input {
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: var(--primaryColor);
+        background-color: var(--secondaryColor);
+        border: 3px var(--shadowBorderColor) solid;
+        border-radius: 10px;
+        padding: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    /* Add hover functionality to the submit button */
+    .submit input:hover {
+        background-color: white;
+    }
+    /* Give some signal that the user clicked submit */
+    .submit input:active {
+        background-color: lightgreen;
+    }
+    /* Style where we define what the red asterisk means */
+    .asterisk p {
+        font-style: italic;
+        color: var(--primaryColor)
+    }
+    /* If input is invalid, wrap text box in red */
+    /* input:invalid {
+        border: solid red 2px;
+    } */
 
 }
 
@@ -74,6 +83,9 @@
     }
     iframe {
         width: 95%;
+    }
+    .submit input {
+        font-size: medium;
     }
 
 }

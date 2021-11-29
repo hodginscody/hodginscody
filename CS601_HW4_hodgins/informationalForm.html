@@ -8,15 +8,25 @@
 </head>
 <body>
     <h1>Informational Form</h1>
+    <!-- onsubmit tells our form a function to call for validation upon form submission -->
     <form name="InformationalForm" onsubmit="return Submit();" method="post">
+        <!-- Red asterisk will be placed next to the required fields, and here I am just explaining
+        to the end user what it means -->
+        <div class="asterisk">
+            <p>* Indicates field is required</p>
+        </div>
         <p>Enter your first name:
-            <input type="text" name="firstName" id="firstName" required>
+            <input type="text" name="firstName" id="firstName" placeholder="Enter here" required>
+            <!-- Using and styling within span here so that I can position asterisk next to text box -->
+            <span style="color: red; font-weight: bold;"> *</span>
         </p>
         <p>Enter your last name:
-            <input type="text" name="lastName" id="lastName" required>
+            <input type="text" name="lastName" id="lastName" placeholder="Enter here" required>
+            <span style="color: red; font-weight: bold;"> *</span>
         </p>
         <p>Enter your facilitator's first name:
-            <input type="text" name="facilitator" id="facilitator" required>
+            <input type="text" name="facilitator" id="facilitator" placeholder="Enter here" required>
+            <span style="color: red; font-weight: bold;"> *</span>
         </p>
         <p>How many years of experience do you have with web design? <br>
             <div class="radioCheckboxes">
