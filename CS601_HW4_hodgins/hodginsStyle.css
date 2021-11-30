@@ -27,9 +27,10 @@
         line-height: 22px;
         text-indent: 20px;
     }
+    /* Give radio buttons and checkboxes a big left margin, and space them a little */
     .radioCheckboxes input {
         margin-left: 100px;
-        vertical-align: -1.5px;
+        margin-top: 5px;
     }
     /* Style our submit button */
     .submit input {
@@ -63,13 +64,20 @@
     input[type=radio]:hover {
         box-shadow:0px 0px 5px var(--primaryColor);
     }
+    .errors {
+        color: red;
+        font-weight: bold;
+        background-color: yellow;
+        float: left;
+        text-indent: 22px;
+    }
 
 }
 
-/* This media query will apply to screens with maximum width of 870px  */
-@media screen and (max-width: 870px) {
-    /* Decrease paragraph, list, and table header and and content font sizes on even smaller screens */
-    p {
+/* This media query will apply to screens with maximum width of 575px  */
+@media screen and (max-width: 575px) {
+    /* Decrease paragraph, span, header, and submit button font sizes on even smaller screens */
+    p, span {
         font-size: small;
     }
     /* This is to avoid header from wrapping on smaller screens */
@@ -78,24 +86,45 @@
     }
     .submit input {
         font-size: medium;
+        margin-left: 9rem;
+    }
+    /* Center text with radio buttons and checkboxes  */
+    .radioCheckboxes input {
+        vertical-align: -2.5px;
     }
 
 }
 
-/* This media query will apply to screens with minimum width 870px and max 1080px */
-@media screen and (min-width: 870px) and (max-width: 1080px) {
-    /* Decrease paragraph, list, and table header and and content font sizes on smaller screens */
-    p {
+/* This media query will apply to screens with minimum width 575px and max 650px */
+@media screen and (min-width: 575px) and (max-width: 650px) {
+    /* Decrease paragraph and span font sizes on smaller screens */
+    p, span {
         font-size: medium;
     }
+    /* We want the submit button to generally be in the center of all content */
+    .submit input {
+        margin-left: 10rem;
+    }
+    /* Center text with radio buttons and checkboxes  */
+    .radioCheckboxes input {
+        vertical-align: -1.75px;
+    }
 
 }
 
-/* This media query will apply to screens with minimum width 1080px */
-@media screen and (min-width: 1080px) {
-    /* This is sort of the default font sizes for any screen over 1080px wide */
-    p {
+/* This media query will apply to screens with minimum width 650px */
+@media screen and (min-width: 650px) {
+    /* This is sort of the default font sizes for any screen over 650px wide */
+    p, span {
         font-size: large;
+    }
+    /* We want the submit button to generally be in the center of all content */
+    .submit input {
+        margin-left: 13rem;
+    }
+    /* Center text with radio buttons and checkboxes */
+    .radioCheckboxes input {
+        vertical-align: -1px;
     }
 
 }

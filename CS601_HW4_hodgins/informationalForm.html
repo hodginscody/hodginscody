@@ -10,6 +10,8 @@
     <h1>Informational Form</h1>
     <!-- onsubmit tells our form a function to call for validation upon form submission -->
     <form name="InformationalForm" action="https://bucs601.com/submit.php" onsubmit="return Submit();" method="post">
+        <!-- Display any error messages at the top of the page -->
+        <div class="errors" id="errors"></div><br>
         <!-- Red asterisk will be placed next to the required fields, and here I am just explaining
         to the end user what it means -->
         <div class="asterisk">
@@ -23,7 +25,7 @@
         </p>
         <p>Enter your last name:
             <!-- Line up this box with first name box -->
-            <input style="margin-left: 5px;" type="text" name="lastName" id="lastName" size="43" maxlength="30" placeholder="Enter here" required>
+            <input style="margin-left: 5px;" type="text" name="lastName" id="lastName" size="37" maxlength="25" placeholder="Enter here" required>
             <span style="color: red; font-weight: bold;"> *</span>
         </p>
         <p>Enter your facilitator's first name:
@@ -34,20 +36,21 @@
             <div class="radioCheckboxes">
                 <!-- Giving the user the option to select one of the radio button options.
                 Giving each button the same name restricts user to only selecting one option. -->
-                <input type="radio" name="programmingExperience" value="<1">  Less than one <br>
-                <input type="radio" name="programmingExperience" value="<5">  Less than five <br>
-                <input type="radio" name="programmingExperience" value="<10">  Less than ten <br>
-                <input type="radio" name="programmingExperience" value=">=10">  Ten or more <br>
+                <!-- Wrapping labels in span so we can style them more easily -->
+                <input type="radio" name="programmingExperience" value="<1">  <span>Less than one</span> <br>
+                <input type="radio" name="programmingExperience" value="<5">  <span>Less than five</span> <br>
+                <input type="radio" name="programmingExperience" value="<10">  <span>Less than ten</span> <br>
+                <input type="radio" name="programmingExperience" value=">=10">  <span>Ten or more</span> <br>
             </div>
         </p>
         <p>Which languages do you have experience with? Select all that apply. <br>
             <div class="radioCheckboxes">
                 <!-- Allow user to check any of the options below -->
-                <input type="checkbox" name="html" value="html">  HTML <br>
-                <input type="checkbox" name="javascript" value="javascript">  Javascript <br>
-                <input type="checkbox" name="c#" value="c#">  C# <br>
-                <input type="checkbox" name="python" value="python">  Python <br>
-                <input type="checkbox" name="java" value="java">  Java <br>
+                <input type="checkbox" name="html" value="html">  <span>HTML</span> <br>
+                <input type="checkbox" name="javascript" value="javascript">  <span>Javascript</span> <br>
+                <input type="checkbox" name="c#" value="c#">  <span>C#</span> <br>
+                <input type="checkbox" name="python" value="python">  <span>Python</span> <br>
+                <input type="checkbox" name="java" value="java">  <span>Java</span> <br>
             </div>
         </p>
         <div class="submit">
