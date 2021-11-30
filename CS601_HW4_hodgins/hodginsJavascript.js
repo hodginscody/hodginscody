@@ -65,17 +65,14 @@ function Submit() {
         document.getElementById('errors').innerHTML = "You entered an invalid facilitator. Please enter one of the following: " + validFacilitators.join(", ");
         document.getElementById("facilitator").value = "";
         return false;
-    }
-    // If validation passes, then return true so we can be redirected to database web address 
-    // if (passedValidation !== false) {
-        passedValidation = true;
-        // If we pass all validation, capitalize first letter in facilitator and keep the rest lowercase.
-        // Will not do the same for firstName and lastName because user could intend to make letters other
-        // than the first capital.
-        // Capitalize the letter at position 0, slice at the first position and lowercase all letters beyond that, and
-        // concatenate the two.
-        document.getElementById("facilitator").value = facilitator.charAt(0).toUpperCase() + facilitator.slice(1,facilitator.length).toLowerCase();
-    // }
+    } 
+    // If we pass all validation, capitalize first letter in facilitator and keep the rest lowercase.
+    // Will not do the same for firstName and lastName because user could intend to make letters other
+    // than the first capital.
+    // Capitalize the letter at position 0, slice at the first position and lowercase all letters beyond that, and
+    // concatenate the two.
+    document.getElementById("facilitator").value = facilitator.charAt(0).toUpperCase() + facilitator.slice(1,facilitator.length).toLowerCase();
+    // If validation passes, then return true so we can be redirected to database web address
     return true;
 }
    
