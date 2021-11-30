@@ -14,25 +14,19 @@ function Submit() {
     // Create an array that contains firstName and lastName, so we don't
     // have extra code and can just loop through each validation
     let nameArray = [firstName, lastName];
-    // passedValidation either equals false (which means we don't complete 
-    // submitting the form) or the web address we are submitting to
-    let passedValidation;
     // Loop through nameArray to validate firstName and lastName
     for (var j = 0; j < nameArray.length; j++) {
         if (nameArray[j].length < 2) {
             // j = 0 -> First Name
             // j = 1 -> Last Name
             if (j == 0) {
-                document.getElementById('errors').innerHTML="**First Name must be at least two characters in the alphabet.**";
-                // alert("First Name must be at least two characters in the alphabet.");
+                document.getElementById('errors').innerHTML = "**First Name must be at least two characters in the alphabet.**";
                 document.getElementById("firstName").value = "";
             } else {
-                // alert("Last Name must be at least two characters in the alphabet.");
+                document.getElementById('errors').innerHTML = "**Last Name must be at least two characters in the alphabet.**";
                 document.getElementById("lastName").value = "";
             }
-            // Will not return here because I want to let the user know if they've
-            // entered invalid characters as well.
-            passedValidation = false;
+            return false;
         }
         // Loop through each character in firstName or lastName and verify it is
         // in the alphabet
@@ -42,16 +36,15 @@ function Submit() {
             // i makes the Regex case insensitive
             if (nameArray[j].charAt(i).match(/[A-Z]/i) == null) {
                 if (j == 0) {
-                    // alert("First Name can only contain characters in the alphabet.");
+                    document.getElementById('errors').innerHTML = "**First Name can only contain characters in the alphabet.**";
                     // If user entry is invalid, set the field to blank
                     document.getElementById("firstName").value = "";
                 } else {
-                    // alert("Last Name can only contain characters in the alphabet.");
+                    document.getElementById('errors').innerHTML = "**Last Name can only contain characters in the alphabet.**";
                     document.getElementById("lastName").value = "";
                 }
-                passedValidation = false;
                 // Return to the form. No need to check the rest of the characters
-                return passedValidation;
+                return false;
             }
         }
     }
@@ -67,15 +60,22 @@ function Submit() {
     // If k equals the length of validFacilitators, then we know the above for loop
     // did not find any match.
     if (k == validFacilitators.length) {
-        // alert("You entered an invalid facilitator. Please enter one of the following: " + validFacilitators.join(","));
+        // Show the user all possible facilitators they can enter.
+        // Use join(", ") to separate array of facilitators by comma and space
+        document.getElementById('errors').innerHTML = "You entered an invalid facilitator. Please enter one of the following: " + validFacilitators.join(", ");
         document.getElementById("facilitator").value = "";
-        passedValidation = false;
-        return passedValidation;
+        return false;
     }
     // If validation passes, then return true so we can be redirected to database web address 
-    if (passedValidation !== false) {
+    // if (passedValidation !== false) {
         passedValidation = true;
-    }
-    return passedValidation;
+        // If we pass all validation, capitalize first letter in facilitator and keep the rest lowercase.
+        // Will not do the same for firstName and lastName because user could intend to make letters other
+        // than the first capital.
+        // Capitalize the letter at position 0, slice at the first position and lowercase all letters beyond that, and
+        // concatenate the two.
+        document.getElementById("facilitator").value = facilitator.charAt(0).toUpperCase() + facilitator.slice(1,facilitator.length).toLowerCase();
+    // }
+    return true;
 }
    

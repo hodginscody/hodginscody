@@ -19,6 +19,7 @@
         text-shadow: -1px -1px var(--shadowBorderColor);
         font-size: 3rem;
         padding-left: 5px;
+        text-indent: 20px;
     }
     p {
         padding: 5px;
@@ -65,11 +66,14 @@
         box-shadow:0px 0px 5px var(--primaryColor);
     }
     .errors {
-        color: red;
+        color: var(--primaryColor);
         font-weight: bold;
         background-color: yellow;
-        float: left;
-        text-indent: 22px;
+        margin-left: 27px;
+        /* Need the following two lines to keep the error background color
+        the same size as the width of the errors */
+        display: inline;
+        float: inline-start;
     }
 
 }
@@ -127,4 +131,16 @@
         vertical-align: -1px;
     }
 
+}
+
+/* Creating separate media queries for error messages so they do not wrap */
+@media screen and (min-width: 610px) and (max-width: 750px) {
+    .errors {
+        font-size: smaller;
+    }
+}
+@media screen and (max-width: 610px) {
+    .errors {
+        font-size: .65rem;
+    }
 }
