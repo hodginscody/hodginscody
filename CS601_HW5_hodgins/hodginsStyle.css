@@ -90,10 +90,10 @@
     h1 {
         font-size: xx-large;
     }
-    .submit input {
+    /* .submit input {
         font-size: medium;
         margin-left: 9rem;
-    }
+    } */
     /* Center text with radio buttons and checkboxes  */
     .radioCheckboxes input {
         vertical-align: -2.5px;
@@ -108,9 +108,9 @@
         font-size: medium;
     }
     /* We want the submit button to generally be in the center of all content */
-    .submit input {
+    /* .submit input {
         margin-left: 10rem;
-    }
+    } */
     /* Center text with radio buttons and checkboxes  */
     .radioCheckboxes input {
         vertical-align: -1.75px;
@@ -125,9 +125,9 @@
         font-size: large;
     }
     /* We want the submit button to generally be in the center of all content */
-    .submit input {
+    /* .submit input {
         margin-left: 13rem;
-    }
+    } */
     /* Center text with radio buttons and checkboxes */
     .radioCheckboxes input {
         vertical-align: -1px;

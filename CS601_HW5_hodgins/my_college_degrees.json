@@ -1,7 +1,7 @@
 {
     "my_college_degrees": [
         {
-            "bachelors": {
+            "degree": {
                 "school": "American University",
                 "program": "Applied Mathematics",
                 "type": "BS",
@@ -9,7 +9,7 @@
             }
         },
         {
-            "masters": {
+            "degree": {
                 "school": "Boston University",
                 "program": "Software Development",
                 "type": "MS",

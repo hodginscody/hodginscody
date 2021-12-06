@@ -7,8 +7,8 @@
         {
             "type": "pwa-chrome",
             "request": "launch",
-            "name": "Open hodginsJavascript.js",
-            "file": "c:\\Users\\chodgins\\Desktop\\BU Course Work\\METCS601\\hodginscody\\CS601_HW5_hodgins\\hodginsJavascript.js"
+            "name": "Open displayJSON.js",
+            "file": "c:\\Users\\chodgins\\Desktop\\BU Course Work\\METCS601\\hodginscody\\CS601_HW5_hodgins\\displayJSON.html"
         }
     ]
 }
