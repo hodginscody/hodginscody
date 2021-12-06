@@ -7,8 +7,8 @@
         {
             "type": "pwa-chrome",
             "request": "launch",
-            "name": "Open informationalForm.html",
-            "file": "c:\\Users\\chodgins\\Desktop\\BU Course Work\\METCS601\\hodginscody\\CS601_HW4_hodgins\\informationalForm.html"
+            "name": "Open hodginsJavascript.js",
+            "file": "c:\\Users\\chodgins\\Desktop\\BU Course Work\\METCS601\\hodginscody\\CS601_HW5_hodgins\\hodginsJavascript.js"
         }
     ]
 }
