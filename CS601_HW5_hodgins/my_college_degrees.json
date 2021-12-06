@@ -1,0 +1,22 @@
+{
+    "my_college_degrees": [
+        {
+            "bachelors": {
+                "school": "American University",
+                "program": "Applied Mathematics",
+                "type": "BS",
+                "yearConferred": "2016"
+            }
+        },
+        {
+            "masters": {
+                "school": "Boston University",
+                "program": "Software Development",
+                "type": "MS",
+                "yearConferred": "2022"
+            }
+
+        }
+
+    ]
+}
