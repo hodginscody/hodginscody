@@ -160,9 +160,9 @@
     }
 }
 
-@media screen and (min-width: 600px) and (max-width: 800px) {
+@media screen and (min-width: 600px) and (max-width: 870px) {
     .gallery p {
-        font-size: medium
+        font-size: medium;
     }
 }
 
