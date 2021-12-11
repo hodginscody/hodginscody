@@ -41,7 +41,7 @@
         background-color: white;
     }
     body {
-      background-color: lightblue;
+        background-color: lightblue;
     }
     nav {
         padding-left: 7px;
@@ -215,5 +215,107 @@ This will prevent too much text wrapping on band.html */
     embed {
         width: 100%;
         float: left;
+    }
+}
+
+/* Media queries for a few pictures on Aircraft page */
+@media screen and (min-width: 870px) {
+    .airplaneBeforeUpgrade img {
+        width: 40%;
+        height: 40%;
+        margin-bottom: 10px;
+        float: left;
+    }
+    .airplaneAfterUpgrade img {
+        width: 88%;
+        height: 50vw;
+        margin-bottom: 10px;
+        float: left;
+    }
+}
+
+@media screen and (max-width: 870px) {
+    .airplaneBeforeUpgrade img, .airplaneAfterUpgrade img {
+        width: 80%;
+        height: 60%;
+        margin-bottom: 10px;
+        float: left;
+    }
+}
+
+/* Media queries for Cats page */
+@media screen and (min-width: 1310px) {
+    .cats img {
+        width: 40%;
+        height: 40%;
+        margin-bottom: 10px;
+        margin-right: 450px;
+    }
+    /* I need to make the picture of my cat Tiggy smaller */
+    .Tiggy img {
+        width: 30%;
+        height: 30%;
+        margin-bottom: 10px;
+        margin-right: 600px;
+    }
+}
+
+@media screen and (min-width: 1310px) {
+    .cats p {
+        max-width: 40rem;
+        line-height: 30px;
+    }
+}
+
+@media screen and (min-width: 1380px) and (max-width: 1450px) {
+    .cats p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 1310px) and (max-width: 1380px) {
+    .cats p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1310px) {
+    .cats img {
+        width: 50%;
+        height: 40%;
+        margin-bottom: 10px;
+        float: right;
+    }
+    .cats p {
+        font-size: 1.6rem;
+        max-width: 40rem;
+        line-height: 45px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .cats img {
+        width: 90%;
+        height: 70%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .cats p {
+        max-width: 55rem;
+    }
+}
+
+@media screen and (min-width: 850px) and (max-width: 1000px) {
+    .cats p {
+        font-size: 1.4rem;
+        line-height: 40px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .cats p {
+        font-size: 1rem;
+        line-height: 25px;
     }
 }
