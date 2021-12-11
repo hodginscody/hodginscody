@@ -210,3 +210,10 @@ This will prevent too much text wrapping on band.html */
         margin-bottom: 10px;
     }
 }
+
+@media screen and (max-width: 900px) {
+    embed {
+        width: 100%;
+        float: left;
+    }
+}
