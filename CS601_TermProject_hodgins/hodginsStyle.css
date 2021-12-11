@@ -150,21 +150,6 @@
         margin-right: 50px;
     }
 }
-/* Media query for Gallery screen */
-@media screen and (min-width: 870px) {
-    .gallery img {
-        float: left;
-        margin-left: 10px;
-        margin-right: 50px;
-        margin-bottom: 10px;
-    }
-}
-
-@media screen and (min-width: 600px) and (max-width: 870px) {
-    .gallery p {
-        font-size: medium;
-    }
-}
 
 /* Creating an extra media query for the youtube embedded video.
 This will prevent too much text wrapping on band.html */
@@ -192,5 +177,36 @@ This will prevent too much text wrapping on band.html */
     }
     .highlight a:hover {
         font-size: 70%;
+    }
+}
+
+/* Media queries for Gallery screen */
+@media screen and (min-width: 1285px) {
+    .gallery img {
+        float: left;
+        margin-left: 10px;
+        margin-right: 50px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 850px) and (max-width: 1285px) {
+    .gallery img {
+        width: 40%;
+        height: 40%;
+        float: inherit;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .gallery img {
+        width: 80%;
+        height: 80%;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
     }
 }
