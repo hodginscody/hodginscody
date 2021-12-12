@@ -8,26 +8,55 @@
 
 /* This media query will apply to any device */
 @media all {
-    p {
+    nav, ul, p, th, td {
         font-family: var(--primaryFont);
     }
+    /* Define properties for the highlight class in all pages */
+    .highlight nav {
+        background-color: lightslategray;
+        padding-top: 10px;
+        padding-right: 8px;
+        padding-bottom: 7px;
+        /* Need the following two lines to keep the nav menu background color
+        the same size as the width of the menu items */
+        display: inline;
+        float: inline-start;
+    }
+    .highlight a {
+        color: var(--secondaryColor);
+        background-color: yellowgreen;
+        font-family: cursive;
+    }
+    /* Define hover effects for various tags */
+    a:hover {
+        background-color: magenta;
+    }
+    .highlight a:hover {
+        font-size: 120%;
+    }
+    a:active {
+        background-color: white;
+    }
+    img:hover, video:hover, iframe:hover {
+        background-color: white;
+    }
     body {
-        background-color: lightblue;
+      background-color: lightblue;
+    }
+    nav {
+        padding-left: 7px;
+        padding-top: 5px;
     }
     h1 {
         color: var(--primaryColor);
         text-shadow: -1px -1px var(--shadowBorderColor);
         font-size: 3rem;
         padding-left: 5px;
-        text-indent: 20px;
     }
-    /* Style the json results Header */
-    .jsonHeader {
-        color: var(--secondaryColor);
-        text-shadow: -1px -1px var(--shadowBorderColor);
-        font-size: 3rem;
-        padding-left: 5px;
-        text-indent: 20px;
+    /* Not styling <li> tags as everything is done within the <ul> tags */
+    ul {
+        list-style: circle;
+        font-style: italic;
     }
     p {
         padding: 5px;
@@ -36,36 +65,28 @@
         line-height: 22px;
         text-indent: 20px;
     }
-    /* Style our submit button */
-    .submit input {
-        font-weight: bold;
-        font-size: 1.2rem;
-        color: var(--primaryColor);
-        background-color: var(--secondaryColor);
-        border: 3px var(--shadowBorderColor) solid;
+    table {
+        padding: 20px;
+        border: 3px var(--primaryColor) dashed;
+        /* Give our table rounded as opposed to jagged corners */
+        border-radius: 10px;
+        margin-left: 20px;
+    }
+    img {
+        border: 2px var(--shadowBorderColor) solid;
         border-radius: 10px;
         padding: 5px;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    /* Add hover functionality to the submit button */
-    .submit input:hover {
-        background-color: white;
-    }
-    /* Give some signal that the user clicked submit */
-    .submit input:active {
-        background-color: lightgreen;
-    }
-    .json {
-        color: var(--primaryColor);
-        font-weight: bold;
+        background-color: var(--primaryColor);
+        margin-bottom: 10px;
+        float: left;
+        margin-left: 10px;
+        margin-right: 5px;
     }
 
 }
 
-/* This media query will apply to screens with maximum width of 575px  */
-@media screen and (max-width: 575px) {
-    /* Decrease paragraph, span, header, and submit button font sizes on even smaller screens */
+@media screen and (max-width: 750px) {
+    /* Decrease paragraph, list, and table header and and content font sizes on even smaller screens */
     p {
         font-size: small;
     }
@@ -73,60 +94,35 @@
     h1 {
         font-size: xx-large;
     }
-    .jsonHeader {
-        font-size: xx-large;
-    }
-    .submit input {
-        font-size: medium;
-        margin-left: 9rem;
-    }
 
 }
 
-/* This media query will apply to screens with minimum width 575px and max 650px */
-@media screen and (min-width: 575px) and (max-width: 650px) {
-    /* Decrease paragraph and span font sizes on smaller screens */
+@media screen and (min-width: 750px) and (max-width: 1270px) {
+    /* Decrease paragraph, list, and table header and and content font sizes on smaller screens */
     p {
         font-size: medium;
     }
-    /* We want the submit button to generally be in the center of all content */
-    .submit input {
-        margin-left: 10rem;
-    }
 
 }
 
-/* This media query will apply to screens with minimum width 650px */
-@media screen and (min-width: 650px) {
-    /* This is sort of the default font sizes for any screen over 650px wide */
+@media screen and (min-width: 1270px) {
+    /* This is sort of the default font sizes for any screen over 1080px wide */
     p {
         font-size: large;
     }
-    /* We want the submit button to generally be in the center of all content */
-    .submit input {
-        margin-left: 13rem;
-    }
 
 }
 
-/* Creating separate media queries for JSON data so it does not wrap. Will allow a little wrap as we get very small */
-@media screen and (min-width: 725px) and (max-width: 800px) {
-    .json p {
-        font-size: medium;
+@media screen and (min-width: 620px) and (max-width: 1220px) {
+    img {
+        width: 45%;
+        height: 45%;
     }
 }
-@media screen and (min-width: 650px) and (max-width: 725px) {
-    .json p {
-        font-size: small;
-    }
-}
-@media screen and (min-width: 600px) and (max-width: 650px) {
-    .json p {
-        font-size: small;
-    }
-}
-@media screen and (max-width: 600px) {
-    .json p {
-        font-size: .75rem;
+
+@media screen and (max-width: 620px) {
+    img {
+        width: 42%;
+        height: 42%;
     }
 }
