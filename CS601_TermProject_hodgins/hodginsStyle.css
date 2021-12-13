@@ -100,6 +100,38 @@
     td {
         font-style: oblique;
     }
+    /* Style the json results Header */
+    .jsonHeader {
+        color: var(--secondaryColor);
+        text-shadow: -1px -1px var(--shadowBorderColor);
+        font-size: 3rem;
+        padding-left: 5px;
+        text-indent: 20px;
+    }
+    /* Style our submit button */
+    .submit input {
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: var(--primaryColor);
+        background-color: var(--secondaryColor);
+        border: 3px var(--shadowBorderColor) solid;
+        border-radius: 10px;
+        padding: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    /* Add hover functionality to the submit button */
+    .submit input:hover {
+        background-color: white;
+    }
+    /* Give some signal that the user clicked submit */
+    .submit input:active {
+        background-color: lightgreen;
+    }
+    /* .json {
+        color: var(--secondaryColor);
+        font-weight: bold;
+    } */
 
 }
 
@@ -323,5 +355,55 @@ This will prevent too much text wrapping on band.html */
     .cats p {
         font-size: 1rem;
         line-height: 25px;
+    }
+}
+
+/* Styling for Knowledge Test */
+@media screen and (max-width: 575px) {
+    .jsonHeader {
+        font-size: xx-large;
+    }
+    .submit input {
+        font-size: medium;
+        margin-left: 9rem;
+    }
+
+}
+
+@media screen and (min-width: 575px) and (max-width: 650px) {
+    /* We want the submit button to generally be in the center of all content */
+    .submit input {
+        margin-left: 10rem;
+    }
+
+}
+
+@media screen and (min-width: 650px) {
+    /* We want the submit button to generally be in the center of all content */
+    .submit input {
+        margin-left: 13rem;
+    }
+
+}
+
+/* Creating separate media queries for JSON data so it does not wrap. Will allow a little wrap as we get very small */
+@media screen and (min-width: 725px) and (max-width: 800px) {
+    .json p {
+        font-size: medium;
+    }
+}
+@media screen and (min-width: 650px) and (max-width: 725px) {
+    .json p {
+        font-size: small;
+    }
+}
+@media screen and (min-width: 600px) and (max-width: 650px) {
+    .json p {
+        font-size: small;
+    }
+}
+@media screen and (max-width: 600px) {
+    .json p {
+        font-size: .75rem;
     }
 }
