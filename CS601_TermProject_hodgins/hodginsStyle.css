@@ -146,7 +146,7 @@
 /* This media query will apply to screens with maximum width of 870px  */
 @media screen and (max-width: 870px) {
     /* Decrease paragraph, list, and table header and and content font sizes on even smaller screens */
-    p, ul, th, td {
+    p, ul, th, td, span {
         font-size: small;
     }
     /* This is to avoid header from wrapping on smaller screens */
@@ -167,7 +167,7 @@
 /* This media query will apply to screens with minimum width 870px and max 1080px */
 @media screen and (min-width: 870px) and (max-width: 1080px) {
     /* Decrease paragraph, list, and table header and and content font sizes on smaller screens */
-    p, ul, th, td {
+    p, ul, th, td, span {
         font-size: medium;
     }
 
@@ -176,7 +176,7 @@
 /* This media query will apply to screens with minimum width 1080px */
 @media screen and (min-width: 1080px) {
     /* This is sort of the default font sizes for any screen over 1080px wide */
-    p, ul, th, td {
+    p, ul, th, td, span {
         font-size: large;
     }
 
@@ -367,34 +367,6 @@ This will prevent too much text wrapping on band.html */
     }
 }
 
-/* Styling for Knowledge Test */
-@media screen and (max-width: 575px) {
-    .jsonHeader {
-        font-size: xx-large;
-    }
-    .submit input {
-        font-size: medium;
-        margin-left: .1rem;
-    }
-
-}
-
-@media screen and (min-width: 575px) and (max-width: 650px) {
-    /* We want the submit button to generally be in the center of all content */
-    .submit input {
-        margin-left: 10rem;
-    }
-
-}
-
-@media screen and (min-width: 650px) {
-    /* We want the submit button to generally be in the center of all content */
-    .submit input {
-        margin-left: 13rem;
-    }
-
-}
-
 /* Creating separate media queries for JSON data so it does not wrap. Will allow a little wrap as we get very small */
 @media screen and (min-width: 725px) and (max-width: 800px) {
     .json p {
@@ -423,6 +395,13 @@ This will prevent too much text wrapping on band.html */
     .radioCheckboxes input {
         vertical-align: -2.5px;
     }
+    .jsonHeader {
+        font-size: xx-large;
+    }
+    .submit input {
+        font-size: medium;
+        margin-left: .1rem;
+    }
 
 }
 @media screen and (min-width: 575px) and (max-width: 650px) {
@@ -430,13 +409,18 @@ This will prevent too much text wrapping on band.html */
     .radioCheckboxes input {
         vertical-align: -1.75px;
     }
+    .submit input {
+        margin-left: 10rem;
+    }
 
 }
-/* This media query will apply to screens with minimum width 650px */
 @media screen and (min-width: 650px) {
     /* Center text with radio buttons and checkboxes */
     .radioCheckboxes input {
         vertical-align: -1px;
+    }
+    .submit input {
+        margin-left: 13rem;
     }
 
 }

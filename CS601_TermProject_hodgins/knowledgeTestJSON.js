@@ -1,4 +1,8 @@
 const answerArea = document.getElementById('json');
+let tempString;
+// These two variables will show us if the answer was correct or not
+const greenCheck = "&#9989";
+const redCross = "&#10060;";
 
 // Used Live Server http://127.0.0.1:5500/
 async function getAnswers(url = '/CS601_TermProject_hodgins/answers.json') {
@@ -29,40 +33,58 @@ async function getAnswers(url = '/CS601_TermProject_hodgins/answers.json') {
           let answer1 = answer.answer1;
           let answer2 = answer.answer2;
           let answer3 = answer.answer3;
-          // What are the user's answers?
-          let userAnswer1 = document.querySelector( 'input[name="questionOne"]:checked').value; 
-          let userAnswer2 = document.querySelector( 'input[name="questionTwo"]:checked').value;
-          let userAnswer3 = document.querySelector( 'input[name="questionThree"]:checked').value;  
+          // What are the user's answers? querySelector finds which button user selected
+          let userAnswer1 = document.querySelector( 'input[name="questionOne"]:checked');
+          // Check if user actually selected any of the choices
+          if (userAnswer1 !== null) {
+            userAnswer1 = userAnswer1.value;
+          } else {
+            userAnswer1 = "";
+          }
+          let userAnswer2 = document.querySelector( 'input[name="questionTwo"]:checked');
+          if (userAnswer2 !== null) {
+            userAnswer2 = userAnswer2.value;
+          } else {
+            userAnswer2 = "";
+          }
+          let userAnswer3 = document.querySelector( 'input[name="questionThree"]:checked');
+          if (userAnswer3 !== null) {
+            userAnswer3 = userAnswer3.value;
+          } else {
+            userAnswer3 = "";
+          }
    
           // Write data to our html tag with id = 'json'
           answerArea.innerHTML += `<p><b>Question 1</b></p>`;
-          answerArea.innerHTML += `<p>Your Choice: ${userAnswer1}`;
+          // tempString is so we can easily append text, like checkmark or X, to same line of answerArea
+          tempString = `<p>Your Choice: ${userAnswer1}`;
           // Compare user's answers to the correct ones
           if (userAnswer1 !== null && answer1 == userAnswer1) {
-            // &#9745 is a checkmark symbol
-            answerArea.innerHTML += `&nbsp;&#9745;</p>`;
+            tempString += `&nbsp;${greenCheck}</p>`;
           } else {
-            // &#10062; is an X
-            answerArea.innerHTML += `&nbsp;&#10062;</p>`
+            tempString += `&nbsp;${redCross}</p>`
           }
+          answerArea.innerHTML += tempString;
           answerArea.innerHTML += `<p>Correct Choice: <b>${answer1}</b></p>`;
           
           answerArea.innerHTML += `<p><b>Question 2</b></p>`;
-          answerArea.innerHTML += `<p>Your Choice: ${userAnswer2}`;
+          tempString = `<p>Your Choice: ${userAnswer2}`;
           if (userAnswer2 !== null && answer2 == userAnswer2) {
-            answerArea.innerHTML += `&nbsp;&#9745;</p>`;
+            tempString += `&nbsp;${greenCheck}</p>`;
           } else {
-            answerArea.innerHTML += `&nbsp;&#10062;</p>`
+            tempString += `&nbsp;${redCross}</p>`
           }
+          answerArea.innerHTML += tempString;
           answerArea.innerHTML += `<p>Correct Choice: <b>${answer2}</b></p>`;
 
           answerArea.innerHTML += `<p><b>Question 3</b></p>`;
-          answerArea.innerHTML += `<p>Your Choice: ${userAnswer3}`;
+          tempString = `<p>Your Choice: ${userAnswer3}`;
           if (userAnswer3 !== null && answer3 == userAnswer3) {
-            answerArea.innerHTML += `&nbsp;&#9745;</p>`;
+            tempString += `&nbsp;${greenCheck}</p>`;
           } else {
-            answerArea.innerHTML += `&nbsp;&#10062;</p>`
+            tempString += `&nbsp;${redCross}</p>`
           }
+          answerArea.innerHTML += tempString;
           answerArea.innerHTML += `<p>Correct Choice: <b>${answer3}</b></p>`;
 
         }
