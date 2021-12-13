@@ -30,9 +30,10 @@ async function getAnswers(url = '/CS601_TermProject_hodgins/answers.json') {
           let answer2 = answer.answer2;
           let answer3 = answer.answer3;
           // What are the user's answers?
-          let userAnswer1 = document.getElementById('questionOne').value;
-          let userAnswer2 = document.getElementById('questionTwo').value;
-          let userAnswer3 = document.getElementById('questionThree').value;
+          let userAnswer1 = document.querySelector( 'input[name="questionOne"]:checked').value; 
+          let userAnswer2 = document.querySelector( 'input[name="questionTwo"]:checked').value;
+          let userAnswer3 = document.querySelector( 'input[name="questionThree"]:checked').value;  
+   
           // Write data to our html tag with id = 'json'
           answerArea.innerHTML += `<p><b>Question 1</b></p>`;
           answerArea.innerHTML += `<p>Your Choice: ${userAnswer1}`;
