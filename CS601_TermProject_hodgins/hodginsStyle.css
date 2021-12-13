@@ -8,7 +8,7 @@
 
 /* This media query will apply to any device */
 @media all {
-    nav, ul, p, th, td {
+    nav, ul, p, th, td, input {
         font-family: var(--primaryFont);
     }
     /* Define properties for the highlight class in all pages */
@@ -127,6 +127,14 @@
     /* Give some signal that the user clicked submit */
     .submit input:active {
         background-color: lightgreen;
+    }
+    /* Give radio buttons and checkboxes a big left margin, and space them a little */
+    .radioCheckboxes input {
+        margin-left: 100px;
+        margin-top: 5px;
+    }
+    input[type=radio]:hover {
+        box-shadow:0px 0px 5px var(--primaryColor);
     }
     /* .json {
         color: var(--secondaryColor);
@@ -365,7 +373,7 @@ This will prevent too much text wrapping on band.html */
     }
     .submit input {
         font-size: medium;
-        margin-left: 9rem;
+        margin-left: .1rem;
     }
 
 }
@@ -406,4 +414,28 @@ This will prevent too much text wrapping on band.html */
     .json p {
         font-size: .75rem;
     }
+}
+
+/* Media queries for Knowledge Test screen */
+@media screen and (max-width: 575px) {
+    /* Center text with radio buttons and checkboxes  */
+    .radioCheckboxes input {
+        vertical-align: -2.5px;
+    }
+
+}
+@media screen and (min-width: 575px) and (max-width: 650px) {
+    /* Center text with radio buttons and checkboxes  */
+    .radioCheckboxes input {
+        vertical-align: -1.75px;
+    }
+
+}
+/* This media query will apply to screens with minimum width 650px */
+@media screen and (min-width: 650px) {
+    /* Center text with radio buttons and checkboxes */
+    .radioCheckboxes input {
+        vertical-align: -1px;
+    }
+
 }
