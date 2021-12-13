@@ -297,6 +297,10 @@ This will prevent too much text wrapping on band.html */
         margin-bottom: 10px;
         margin-right: 450px;
     }
+    .cats p {
+        max-width: 40rem;
+        line-height: 30px;
+    }
     /* I need to make the picture of my cat Tiggy smaller */
     .Tiggy img {
         width: 30%;
@@ -305,11 +309,10 @@ This will prevent too much text wrapping on band.html */
         margin-right: 600px;
     }
 }
-
-@media screen and (min-width: 1310px) {
-    .cats p {
-        max-width: 40rem;
-        line-height: 30px;
+@media screen and (min-width: 1000px) {
+    /* Align description of each cat with their image */
+    .Tiggy, .Baby, .Schnitzel {
+        float: right;
     }
 }
 
@@ -333,7 +336,6 @@ This will prevent too much text wrapping on band.html */
         float: right;
     }
     .cats p {
-        font-size: 1.6rem;
         max-width: 40rem;
         line-height: 45px;
     }
@@ -354,7 +356,6 @@ This will prevent too much text wrapping on band.html */
 
 @media screen and (min-width: 850px) and (max-width: 1000px) {
     .cats p {
-        font-size: 1.4rem;
         line-height: 40px;
     }
 }
