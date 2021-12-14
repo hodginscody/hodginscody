@@ -136,10 +136,6 @@
     input[type=radio]:hover {
         box-shadow:0px 0px 5px var(--primaryColor);
     }
-    /* .json {
-        color: var(--secondaryColor);
-        font-weight: bold;
-    } */
 
 }
 

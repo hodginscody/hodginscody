@@ -1,8 +1,8 @@
 // Notes: will not allow user to quit the program by clicking Cancel.
 // Will also not allow user to enter blank responses. They must
-// enter at least one character. This program will only run on the home.html page.
+// enter at least one character in the alphabet. This program will only run on the home.html page.
 
-// First, delay our welcomeProgram() function so all of our DOM content is loaded
+// First, delay our welcomeProgram() function so all of our DOM content is loaded (Thank you Christian!!)
 onload = function() {
     // wait for 500 ms (.5 seconds) to give time for DOM to load
      setTimeout( function(){
@@ -40,6 +40,7 @@ function welcomeProgram() {
     }
     while (user_name == null || !(user_name.length > 0) || user_name.length > 15 || keepLooping == true);
     
+    // Show user's name in header
     document.getElementById("header").innerHTML = `<h1>Welcome ${user_name}!</h1>`
     alert("Welcome " + user_name + "! Enjoy my website!");
 
