@@ -2,6 +2,14 @@
 // Will also not allow user to enter blank responses. They must
 // enter at least one character. This program will only run on the home.html page.
 
+// First, delay our welcomeProgram() function so all of our DOM content is loaded
+onload = function() {
+    // wait for 500 ms (.5 seconds) to give time for DOM to load
+     setTimeout( function(){
+         welcomeProgram();
+     }, 100);
+ }
+
 function welcomeProgram() {
     alert("Welcome to my website!");
     var user_name;
@@ -28,11 +36,11 @@ function welcomeProgram() {
                     break;
                 }
             }
-        }
-        document.getElementById("header").innerHTML = `<h1>Welcome ${user_name}!</h1>`  
+        }  
     }
     while (user_name == null || !(user_name.length > 0) || user_name.length > 15 || keepLooping == true);
-
+    
+    document.getElementById("header").innerHTML = `<h1>Welcome ${user_name}!</h1>`
     alert("Welcome " + user_name + "! Enjoy my website!");
 
 }

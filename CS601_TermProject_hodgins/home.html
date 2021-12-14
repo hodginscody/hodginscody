@@ -19,10 +19,13 @@
             <a href="knowledgeTest.html">Knowledge Test</a>
         </nav>
     </div>
+    <br>
     <div id="header"></div>
-    <!-- <h1>About Me</h1> -->
     <!-- Display picture of when I received my Instrument Pilot's License -->
-    <img src="images/IFRLicense.jpeg" width="550" height="400" alt="Cody passing instrument flight test">
+    <!-- Place image in its own div so we can reference with Vue -->
+    <div id="codyFlying">
+        <img :src="hover1" @mouseover="hover = true" @mouseleave="hover = false" width="550" height="400" alt="Cody passing instrument flight test">
+    </div>
     <p>
         My name is Cody Hodgins. I grew up in Holyoke, MA and received my Bachelor's
         in Applied Mathematics from American University. I worked for the White House
@@ -41,9 +44,52 @@
         thus saving them time and money.
     </p>
     <!-- Display picture of my band. -->
-    <img src="images/BandPic_HomePage.jpg" width="550" height="400" alt="My band 2TheTop performing at Holyoke Fireworks">
+    <!-- Place images in their own divs so we can reference with Vue -->
+    <div id="codyBand">
+        <img :src="hover2" @mouseover="hover = true" @mouseleave="hover = false" width="550" height="400" alt="My band 2TheTop performing at Holyoke Fireworks">
+    </div>
     <!-- Link to external javascript hodginsJavascript.js -->
-    <script src="hodginsJavascript.js" onload="welcomeProgram()">
+    <script src="hodginsJavascript.js">
+    </script>
+
+    <!-- This is how we invoke Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- Attach Vue to each of our images' div -->
+    <script>
+        var codyFlying = new Vue({
+            el: '#codyFlying',
+            data: {
+                picturePilotOne: "images/IFRLicense.jpeg",
+                picturePilotTwo: "images/privatePilot.jpg",
+                hover: false
+            },
+            computed: {
+                hover1 () {
+                    if (this.hover == true) {
+                        return this.picturePilotTwo
+                    } else {
+                        return this.picturePilotOne
+                    }
+                }
+            }
+        })
+        var cody22 = new Vue({
+            el: '#codyBand',
+            data: {
+                pictureBandOne: "images/BandPic_HomePage.jpg",
+                pictureBandTwo: "images/bandHome2.jpg",
+                hover: false
+            },
+            computed: {
+                hover2 () {
+                    if (this.hover == true) {
+                        return this.pictureBandTwo
+                    } else {
+                        return this.pictureBandOne
+                    }
+                }
+            }
+        })
     </script>
 </body>
 </html>
