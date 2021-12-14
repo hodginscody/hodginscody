@@ -22,7 +22,10 @@
     <br>
     <h1>About our Flight Simulator</h1>
     <!-- Display a picture of our flight simulator -->
-    <img src="images/FlightSim.jpg" width="600" height="300" alt="Wolf Aviation Network Flight Simulator"> 
+    <!-- Place image in its own div so we can reference with Vue -->
+    <div id="flightsim">
+        <img :src="hover1" @mouseover="hover = true" @mouseleave="hover = false" width="550" height="300" alt="Flight simulator before and after photos">
+    </div>
     <p>
         Our flight simulator, AirWolf, will be FAA approved as an Advanced Aviation
         Training Device (AATD). An AATD allows pilots to count hours towards their
@@ -62,12 +65,36 @@
     <br>
     <!-- Set target="_blank" so page is opened in a new tab -->
     <p>
-        Feel free to check out our website by <a target="_blank" href="https://wolfaviationnetwork.com">clicking here</a>.
-        Here is a short video of our simulator as well.
+        Hovering over the picture shows before and after photos of the simulator. Feel free to check out our
+        website by <a target="_blank" href="https://wolfaviationnetwork.com">clicking here</a>. Here is a 
+        short video of our simulator as well.
     </p>
     <!-- Using HTML 5 video tag to insert a video of our flight sim onto the page -->
     <video width="600" height="340" controls>
         <source src="images/FlightSimVideo.mp4" type="video/mp4">
     </video>
+
+    <!-- This is how we invoke Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- Attach Vue to each of our images' div -->
+    <script>
+        var flightsim = new Vue({
+            el: '#flightsim',
+            data: {
+                flightsimAfter: "images/FlightSim.jpg",
+                flightsimBefore: "images/flightsimBefore.jpg",
+                hover: false
+            },
+            computed: {
+                hover1 () {
+                    if (this.hover == true) {
+                        return this.flightsimBefore
+                    } else {
+                        return this.flightsimAfter
+                    }
+                }
+            }
+        })
+    </script>
 </body>
 </html>

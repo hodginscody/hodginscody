@@ -22,7 +22,10 @@
     <br>
     <h1>Our Airplane</h1>
     <!-- Display main picture of our aircraft -->
-    <img src="images/airplaneMain.jpg" width="550" height="400" alt="Our Piper Archer aircraft">
+    <!-- Place image in its own div so we can reference with Vue -->
+    <div id="plane">
+        <img :src="hover1" @mouseover="hover = true" @mouseleave="hover = false" width="550" height="400" alt="Different planes Cody has flown">
+    </div>
     <p>
         This is my friend's 1979 Piper Archer. A Piper Archer is a 4-seat aircraft with a 
         180 horsepower engine and cruise speeds of roughly 130 miles per hour. Every airplane 
@@ -30,7 +33,8 @@
         side of an airplane. This plane's call-sign is <i>N2222B</i> and because of the trailing "B",
         we have nicknamed this plane "The Bro". My friend and I both trained and received our
         Instrument-rating Pilot licenses on this aircraft. We have also flown it to several locations
-        such as Provincetown, Nantucket, and Portsmouth, NH. 
+        such as Provincetown, Nantucket, and Portsmouth, NH. If you hover over the plane picture, you
+        will see the first plane we ever trained on, nicknamed "Lil' Romeo".
     </p>
     <p>
         In 2020, we worked with an aviation mechanic to upgrade the avionics (instruments) and panel. 
@@ -48,5 +52,28 @@
     <div class="airplaneAfterUpgrade">
         <img src="images/airplanePanel.jpg" width="550" height="400" alt="Our newly installed panel on our aircraft">
     </div>
+
+    <!-- This is how we invoke Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- Attach Vue to each of our images' div -->
+    <script>
+        var planes = new Vue({
+            el: '#plane',
+            data: {
+                pictureNewPlane: "images/airplaneMain.jpg",
+                pictureOldPlane: "images/olderPlane.jpg",
+                hover: false
+            },
+            computed: {
+                hover1 () {
+                    if (this.hover == true) {
+                        return this.pictureOldPlane
+                    } else {
+                        return this.pictureNewPlane
+                    }
+                }
+            }
+        })
+    </script>
 </body>
 </html>
