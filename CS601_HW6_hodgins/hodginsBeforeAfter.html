@@ -14,18 +14,20 @@
     </p>
     <!-- Place images in their own divs so we can reference with Vue -->
     <div id="cody15">
-        <!-- <transition name="fade"> -->
-        <img :src="hover1" @mouseover="hover = true" @mouseleave="hover = false" width="550" height="600" alt="Cody at 15 years old posing for Christmas pictures">
-        <!-- </transition> -->
+        <!-- <span v-html="picOneInfo"></span> -->
+        <img v-html="picOneInfo" v-on:click="newHtml1" :src="hover1" @mouseover="hover = true" @mouseleave="hover = false" width="550" height="600" alt="Cody at 15 years old posing for Christmas pictures">
     </div>
     <div id="cody22">
-        <img :src="hover2" @mouseover="hover = true" @mouseleave="hover = false" width="550" height="600" alt="Cody at 22 years old running indoor track">
+        <!-- <span v-html="picTwoInfo"></span> -->
+        <img v-html="picTwoInfo" v-on:click="newHtml2" :src="hover2" @mouseover="hover = true" @mouseleave="hover = false" width="550" height="600" alt="Cody at 22 years old running indoor track">
     </div>
     <div id="cody26">
-        <img :src="hover3" @mouseover="hover = true" @mouseleave="hover = false" width="550" height="550" alt="Cody at 26 years old graduating from American University">
+        <!-- <span v-html="picThreeInfo"></span> -->
+        <img v-html="picThreeInfo" v-on:click="newHtml3" :src="hover3" @mouseover="hover = true" @mouseleave="hover = false" width="550" height="550" alt="Cody at 26 years old graduating from American University">
     </div>
     <div id="cody28">
-        <img :src="hover4" @mouseover="hover = true" @mouseleave="hover = false" width="500" height="600" alt="Cody at 28 years old posing for the camera">
+        <!-- <span v-html="picFourInfo"></span> -->
+        <img v-html="picFourInfo" v-on:click="newHtml4" :src="hover4" @mouseover="hover = true" @mouseleave="hover = false" width="500" height="600" alt="Cody at 28 years old posing for the camera">
     </div>
     <!-- This is how we invoke Vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -36,7 +38,13 @@
             data: {
                 picture1: "cody15.jpg",
                 pictureOld: "cody5.jpg",
+                picOneInfo: "Cody 15 years old; Running an Indoor Track race; Northampton, MA",
                 hover: false
+            },
+            methods: {
+                newHtml1() {
+                this.picOneInfo = '<p style="color:red;">New Message</p>';
+                }
             },
             computed: {
                 hover1 () {
@@ -53,7 +61,13 @@
             data: {
                 picture2: "cody22.jpg",
                 pictureOld: "cody5.jpg",
+                picTwoInfo: "Cody 22 years old; Graduating College; Washington, DC",
                 hover: false
+            },
+            methods: {
+                newHtml2() {
+                this.picTwoInfo = '<p style="color:red;">New Message</p>';
+                }
             },
             computed: {
                 hover2 () {
@@ -70,7 +84,13 @@
             data: {
                 picture3: "cody26.jpg",
                 pictureOld: "cody5.jpg",
+                picThreeInfo: "Cody 26 years old; Hiking a mountain; Amherst, MA",
                 hover: false
+            },
+            methods: {
+                newHtml3() {
+                this.picThreeInfo = '<p style="color:red;">New Message</p>';
+                }
             },
             computed: {
                 hover3 () {
@@ -87,7 +107,13 @@
             data: {
                 picture4: "cody28.jpg",
                 pictureOld: "cody5.jpg",
+                picFourInfo: "Cody 28 years old; Dinner at IHOP; West Springfield, MA",
                 hover: false
+            },
+            methods: {
+                newHtml4() {
+                this.picFourInfo = '<p style="color:red;">New Message</p>';
+                }
             },
             computed: {
                 hover4 () {
